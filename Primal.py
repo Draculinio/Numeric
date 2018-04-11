@@ -3,9 +3,13 @@ import time
 
 def definirPrimalidad(num):
     primo = True
-    for i in range(3, num):
+    for i in range(3, int(num/2)):
         if num != 2 or num != 3:
             if num % i == 0:
+                primo = False
+                break
+        else:
+            if num%2 == 0:
                 primo = False
                 break
     return primo
