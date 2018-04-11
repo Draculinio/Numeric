@@ -9,7 +9,7 @@ def definirPrimalidad(num):
                 primo = False
                 break
         else:
-            if num%2 == 0:
+            if num%2 and num!=2 == 0:
                 primo = False
                 break
     return primo
