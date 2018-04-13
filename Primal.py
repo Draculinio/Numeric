@@ -7,7 +7,7 @@ def definirPrimalidad(num):
         return False
     if num == 2 or num == 3:
         return True
-    for i in range(3, int(num/2)):
+    for i in range(3, int(num/2),2):
         if num % i == 0:
             primo = False
             break
