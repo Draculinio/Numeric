@@ -3,15 +3,14 @@ import time
 
 def definirPrimalidad(num):
     primo = True
+    if num % 2 == 0 and num != 2:
+        return False
+    if num == 2 or num == 3:
+        return True
     for i in range(3, int(num/2)):
-        if num != 2 or num != 3:
-            if num % i == 0:
-                primo = False
-                break
-        else:
-            if num%2 and num!=2 == 0:
-                primo = False
-                break
+        if num % i == 0:
+            primo = False
+            break
     return primo
 
 num = int(input("Ingrese un número: "))
