@@ -1,26 +1,16 @@
 import datetime
 import time
+import math
 
-def definirPrimalidad(num):
-    primo = True
-    if num % 2 == 0 and num != 2:
-        return False
-    if num == 2 or num == 3:
+class primalidad:
+    def definirPrimalidad(num):
+        if num % 2 == 0 and num != 2:
+            return False
+        if num == 2 or num == 3:
+            return True
+        #for i in range(3, int(num/2),2):
+        for i in range(3, int(round(math.sqrt(num),0))):
+            if num % i == 0:
+                return False
+                break
         return True
-    for i in range(3, int(num/2),2):
-        if num % i == 0:
-            primo = False
-            break
-    return primo
-
-num = int(input("Ingrese un número: "))
-print ("Tiempo de inicio: "+str(datetime.datetime.now().time()))
-inicio = time.time()
-primo = definirPrimalidad(num)
-final = time.time()
-if primo == True:
-    print("Es primo")
-else:
-    print("No es primo")
-print ("Tiempo de fin: "+str(datetime.datetime.now().time()))
-print  ("Tiempo de ejecución: "+str(final-inicio))
